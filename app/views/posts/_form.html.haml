@@ -1,0 +1,14 @@
+= form_with model: @post do |form|
+  - if form.object.errors.any?
+    - form.object.errors.full_messages.each do |msg|
+      = msg
+      %br
+  %div
+    = form.label :title
+    = form.text_field :title
+
+  %div
+    = form.label :body
+    = form.text_area :body
+  
+  = form.button
